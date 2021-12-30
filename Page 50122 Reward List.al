@@ -1,4 +1,4 @@
-page 50102 "Reward List"
+page 50122 "Reward List"
 {
     // Specify that this page will be a list page.
     PageType = List;

@@ -1,4 +1,4 @@
-codeunit 50106 RewardsUpgradeCode
+codeunit 50126 RewardsUpgradeCode
 {
     // An upgrade codeunit includes AL methods for synchronizing changes to a table definition 
     // in an application with the business data table in SQL Server and migrating existing 

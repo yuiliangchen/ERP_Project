@@ -1,4 +1,4 @@
-codeunit 50105 RewardsInstallCode
+codeunit 50125 RewardsInstallCode
 {
     // Set the codeunit to be an install codeunit. 
     Subtype = Install;

@@ -1,7 +1,11 @@
-tableextension 50103 "Customer Ext" extends Customer
+tableextension 50123 "Customer Ext" extends Customer
 {
     fields
     {
+        field(10001; RewardPoints; Integer) 
+        { 
+            MinValue = 0; 
+        } 
         field(50100;"Reward ID";Code[30])
         {
             // Set links to the "Reward ID" from the Reward table.
@@ -23,4 +27,20 @@ tableextension 50103 "Customer Ext" extends Customer
             end;
         }
     }
+    procedure UpdateCreditLimit(NewCreditLimit: Decimal)
+    begin
+        Rec.Validate("Credit Limit (LCY)", NewCreditLimit);
+        Rec.Modify();
+    end;
+
+    procedure CalculateCreditLimit(): Decimal
+    var
+        Cust: Record Customer;
+    begin
+        Cust := Rec;
+        Cust.SetRange("Date Filter", CalcDate('-12M', WorkDate()), WorkDate());
+        Cust.CalcFields("Sales (LCY)");
+        exit(Round(Cust."Sales (LCY)"))
+    end;
+
 }

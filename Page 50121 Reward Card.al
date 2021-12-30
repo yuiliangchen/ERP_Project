@@ -1,4 +1,4 @@
-page 50101 "Reward Card"
+page 50121 "Reward Card"
 {
     // The page will be of type "Card" and will render as a card.
     PageType = Card;
